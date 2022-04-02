@@ -6,9 +6,9 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap("", ";", "<Nop>", opts)
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 -- Modes
 --   normal_mode = "n",
@@ -19,6 +19,9 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- No Highlight
+keymap("n", "<C-n>", ":nohl<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -67,3 +70,34 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Operator
+-- Select things you want to perform operations on
+-- inside-next { ( [
+-- keymap("o", "in(", ":<c-u>normal! f(vi(<cr>", opts)
+-- keymap("o", "il(", ":<c-u>normal! F)vi(<cr>", opts)
+-- keymap("o", "an(", ":<c-u>normal! f(va(<cr>", opts)
+-- keymap("o", "al(", ":<c-u>normal! F)va(<cr>", opts)
+-- keymap("o", "in[", ":<c-u>normal! f[vi[<cr>", opts)
+-- keymap("o", "il[", ":<c-u>normal! F]vi[<cr>", opts)
+-- keymap("o", "an[", ":<c-u>normal! f[va[<cr>", opts)
+-- keymap("o", "al[", ":<c-u>normal! F]va[<cr>", opts)
+-- keymap("o", "in{", ":<c-u>normal! f{vi{<cr>", opts)
+-- keymap("o", "il{", ":<c-u>normal! F}vi{<cr>", opts)
+-- keymap("o", "an{", ":<c-u>normal! f{va{<cr>", opts)
+-- keymap("o", "al{", ":<c-u>normal! F}va{<cr>", opts)
+-- keymap("o", "in<", ":<c-u>normal! f<vi<<cr>", opts)
+-- keymap("o", "il<", ":<c-u>normal! F>vi<<cr>", opts)
+-- keymap("o", "an<", ":<c-u>normal! f<va<<cr>", opts)
+-- keymap("o", "al<", ":<c-u>normal! F>va<<cr>", opts)
+-- keymap("o", "in'", ":<c-u>normal! f'vi'<cr>", opts)
+-- keymap("o", "il'", ":<c-u>normal! F'vi'<cr>", opts)
+-- keymap("o", "an'", ":<c-u>normal! f'va'<cr>", opts)
+-- keymap("o", "al'", ":<c-u>normal! F'va'<cr>", opts)
+-- keymap("o", "in`", ":<c-u>normal! f`vi`<cr>", opts)
+-- keymap("o", "il`", ":<c-u>normal! F`vi`<cr>", opts)
+-- keymap("o", "an`", ":<c-u>normal! f`va`<cr>", opts)
+-- keymap("o", "al`", ":<c-u>normal! F`va`<cr>", opts)
+-- keymap("o", 'in"', ':<c-u>normal! f"vi"<cr>', opts)
+-- keymap("o", 'il"', ':<c-u>normal! F"vi"<cr>', opts)
+-- keymap("o", 'an"', ':<c-u>normal! f"va"<cr>', opts)
+-- keymap("o", 'al"', ':<c-u>normal! F"va"<cr>', opts)

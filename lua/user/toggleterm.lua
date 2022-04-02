@@ -68,3 +68,9 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
+
+local ruby = Terminal:new({ cmd = "pry", hidden = true })
+
+function _RUBY_TOGGLE()
+	ruby:toggle()
+end

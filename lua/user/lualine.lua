@@ -31,6 +31,12 @@ local mode = {
 	end,
 }
 
+local filename = {
+  "filename",
+  file_status = true,
+  path = 1,
+}
+
 local filetype = {
 	"filetype",
 	icons_enabled = false,
@@ -72,18 +78,17 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {},
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_a = { diagnostics },
+		lualine_b = { mode, spaces },
+		lualine_c = { diff, branch },
+		lualine_x = { filetype, "enconding",  },
+		lualine_y = { filename },
+		lualine_z = { location, progress },
 	},
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
+		lualine_c = { filename },
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},

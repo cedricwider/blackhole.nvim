@@ -1,6 +1,7 @@
 vim.cmd [[
 try
-  colorscheme darkplus
+  let ayucolor="mirage"
+  colorscheme ayu
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
