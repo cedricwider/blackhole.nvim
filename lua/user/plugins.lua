@@ -104,6 +104,10 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   use "phaazon/hop.nvim"
   use "mfussenegger/nvim-dap"
+  use "edkolev/tmuxline.vim"
+  use 'alexghergh/nvim-tmux-navigation'
+  use 'mattn/emmet-vim'
+  use 'michaeljsmith/vim-indent-object'
 
   -- Testing
   use {
