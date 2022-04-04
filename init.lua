@@ -21,4 +21,4 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.nvim-colorizer"
 require "user.hop"
-
+require "user.tmux-navigation"
