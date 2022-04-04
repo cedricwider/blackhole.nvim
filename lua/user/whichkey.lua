@@ -129,8 +129,8 @@ local mappings = {
   },
 
   x = { "<cmd>qa!<CR>", "Quit" },
-
   [";"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
+  ["<tab>"] = { "<cmd>b#<cr>", "Swap previous buffer" },
 }
 
 local setup = {

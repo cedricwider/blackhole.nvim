@@ -108,6 +108,7 @@ return packer.startup(function(use)
   use 'alexghergh/nvim-tmux-navigation'
   use 'mattn/emmet-vim'
   use 'michaeljsmith/vim-indent-object'
+  use 'kevinhwang91/rnvimr'
 
   -- Testing
   use {
