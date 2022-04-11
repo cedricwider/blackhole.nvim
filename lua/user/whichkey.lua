@@ -29,10 +29,9 @@ local mappings = {
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
 
-	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-
 	f = {
 		name = "File",
+		e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		f = { "<cmd>Telescope find_files <cr>", "Find files" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		l = { "<cmd>NvimTreeFindFile<cr>", "Locate in Tree" },
