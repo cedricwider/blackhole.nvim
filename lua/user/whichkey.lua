@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local mappings = {
+local leader_mappings = {
 	a = { "<cmd>Alpha<cr>", "Alpha" },
 
 	b = {
@@ -133,6 +133,53 @@ local mappings = {
 	["<tab>"] = { "<cmd>b#<cr>", "Swap previous buffer" },
 }
 
+local space_mappings = {
+	q = { "<cmd>bdelete<cr>", "Close Window and Buffer" },
+	h = {
+		name = "GitHub (Octo)",
+		p = {
+			name = "Pull Requests",
+			c = { "<cmd>Octo pr commits<cr>", "Commits" },
+			d = { "<cmd>Octo pr diff<cr>", "Diff" },
+			f = { "<cmd>Octo pr search<cr>", "Find PullRequests" },
+			h = { "<cmd>Octo pr changes<cr>", "Hunks" },
+			o = { "<cmd>Octo pr checkout<cr>", "Checkout" },
+			p = { "<cmd>Octo pr list<cr>", "Open PRs" },
+			r = { "<cmd>Octo pr ready<cr>", "Mark draft as Ready" },
+			t = { "<cmd>Octo pr checks<cr>", "Checks" },
+			w = { "<cmd>Octo pr browser<cr>", "Browser (Web)" },
+			x = { "<cmd>Octo pr close<cr>", "Close PR" },
+			y = { "<cmd>Octo pr url<cr>", "Yank URL" },
+			l = {
+				name = "Label",
+				a = { "<cmd>Octo label add<cr>", "Add Label" },
+				r = { "<cmd>Octo label remove<cr>", "Remove Label" },
+				c = { "<cmd>Octo label create<cr>", "Create Label" },
+			},
+			m = {
+				name = "Merge",
+				c = { "<cmd>Octo pr merge commit<cr>", "Commit" },
+				r = { "<cmd>Octo pr merge rebase<cr>", "Rebase" },
+				s = { "<cmd>Octo pr merge squash<cr>", "Squash" },
+			},
+		},
+		r = {
+			name = "Review",
+			c = { "<cmd>Octo review comment<cr>", "Comment review" },
+			d = { "<cmd>Octo review submit<cr>", "Submit Review" },
+			e = { "<cmd>Octo review resume<cr>", "Edit (pending) Review" },
+			r = { "<cmd>Octo review start<cr>", "Start Review" },
+			x = { "<cmd>Octo review discard<cr>", "Discard Review" },
+		},
+	},
+	t = {
+		name = "Test",
+		n = { "<cmd>TestNearest<cr>", "Test nearest" },
+		f = { "<cmd>TestFile<cr>", "Test file" },
+		s = { "<cmd>TestSuite<cr>", "Test Suite" },
+	},
+}
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -199,7 +246,7 @@ local setup = {
 	},
 }
 
-local opts = {
+local leader_options = {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -208,5 +255,15 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
+local space_options = {
+	mode = "n", -- NORMAL mode
+	prefix = "<space>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(leader_mappings, leader_options)
+which_key.register(space_mappings, space_options)
