@@ -1,7 +1,7 @@
 return {
-	cmd = { "solargraph", "stdio" },
+	cmd = { "/home/cedricwider/.rbenv/shims/solargraph", "stdio" },
 	filetypes = { "ruby" },
-	init_options = { formatting = true },
+	init_options = { formatting = false },
 	settings = {
 		solargraph = {
 			completion = true,

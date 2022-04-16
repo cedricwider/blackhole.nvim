@@ -12,9 +12,16 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
-    -- formatting.eslint,
+		-- formatting.eslint,
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    -- diagnostics.flake8
+
+		diagnostics.eslint_d,
+		diagnostics.haml_lint,
+		-- diagnostics.flake8
+
+		-- ruby formatting and diagnostics
+		formatting.rubocop,
+		diagnostics.rubocop,
 	},
 })
