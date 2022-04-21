@@ -130,7 +130,7 @@ local leader_mappings = {
 
 	x = { "<cmd>qa!<CR>", "Quit" },
 	[";"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
-	["<tab>"] = { "<cmd>b#<cr>", "Swap previous buffer" },
+	["<tab>"] = { "<cmd>Other<cr>", "Swap previous buffer" },
 }
 
 local space_mappings = {
