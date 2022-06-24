@@ -89,9 +89,17 @@ M.on_attach = function(client, bufnr)
 		local tsserver_settings = require("user.lsp.settings.tsserver")
 		tsserver_settings.on_attach(client, bufnr)
 	end
+
+	if client.name == "volar" then
+		local volar_settings = require("user.lsp.settings.volar")
+		volar_settings.on_attach(client, bufnr)
+	end
+
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
-	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	if client.name == "null-ls" then
+		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

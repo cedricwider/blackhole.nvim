@@ -13,5 +13,13 @@ other.setup({
 			pattern = "spec/(.*)/(.*)_spec.rb$",
 			target = "app/%1/%2.rb",
 		},
+		{
+			pattern = "server/src/(.*)/(.*).ts$",
+			target = "server/test/%1/%2.spec.ts",
+		},
+		{
+			pattern = "server/test/(.*)/(.*).spec.ts$",
+			target = "server/src/%1/%2.ts",
+		},
 	},
 })

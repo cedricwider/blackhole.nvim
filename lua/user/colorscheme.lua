@@ -1,9 +1,11 @@
-vim.cmd [[
+-- let ayucolor="mirage"
+-- colorscheme ayu
+vim.g.tokyonight_style = "storm"
+vim.cmd([[
 try
-  let ayucolor="mirage"
-  colorscheme ayu
+  colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
 endtry
-]]
+]])

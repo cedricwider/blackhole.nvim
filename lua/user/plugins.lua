@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use({ "numToStr/Comment.nvim", commit = "0aaea32" }) -- Easily comment stuff
+	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
@@ -62,7 +62,9 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 	use("ggandor/lightspeed.nvim")
 	use("rgroli/other.nvim")
-
+	use("yamatsum/nvim-cursorline")
+	use("xiyaowong/telescope-emoji.nvim")
+	use("folke/tokyonight.nvim")
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
@@ -141,6 +143,9 @@ return packer.startup(function(use)
 	-- Debugging
 	use("mfussenegger/nvim-dap")
 	use("suketa/nvim-dap-ruby")
+
+	--Local plugins
+	use("~/Developer/lua/whid")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

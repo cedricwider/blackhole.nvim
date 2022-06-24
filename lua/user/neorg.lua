@@ -6,6 +6,14 @@ end
 neorg.setup({
 	load = {
 		["core.defaults"] = {},
+		["core.keybinds"] = {
+			config = {
+				default_keybinds = true,
+				neorg_leader = "<space>",
+				hook = nil,
+				keybind_presets = "neorg",
+			},
+		},
 		-- ["core.gtd.base"] = {},
 		["core.norg.completion"] = {
 			config = {

@@ -11,17 +11,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
-		-- formatting.eslint,
+		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" }, sources = { "javascript", "javascriptreact", "typescript", "typescriptreact"}  }),
 		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.rubocop,
 		formatting.stylua,
 
 		diagnostics.eslint_d,
 		diagnostics.haml_lint,
-		-- diagnostics.flake8
-
-		-- ruby formatting and diagnostics
-		formatting.rubocop,
 		diagnostics.rubocop,
 	},
-})
+
+}
+)
