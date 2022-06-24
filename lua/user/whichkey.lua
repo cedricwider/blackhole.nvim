@@ -117,10 +117,12 @@ local leader_mappings = {
 
 	t = {
 		name = "Test",
-		c = { "<cmd>UltestClear<cr>", "Clear" },
-		l = { "<cmd>UltestLast<cr>", "Last" },
-		m = { "<cmd>UltestSummary<cr>", "Sumamry" },
-		n = { "<cmd>UltestNearest<cr>", "Nearest" },
+		i = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Info" },
+		j = { "<cmd>lua require('neotest').jump.next()<cr>", "Jump to next test" },
+		k = { "<cmd>lua require('neotest').jump.prev()<cr>", "Jump to prev test" },
+		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Sumamry" },
+		n = { "<cmd>lua require('neotest').run.run()<cr>", "Nearest" },
+		f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "File" },
 	},
 
 	w = {

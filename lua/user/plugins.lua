@@ -69,6 +69,7 @@ return packer.startup(function(use)
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
 	use("ayu-theme/ayu-vim")
+  use("folke/tokyonight.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -125,8 +126,12 @@ return packer.startup(function(use)
 
 	-- Testing
 	use({
-		"rcarriga/vim-ultest",
-		requires = { "vim-test/vim-test" },
+		"nvim-neotest/neotest",
+		requires = {
+      "nvim-lua/plenary.nvim",
+      "haydenmeade/neotest-jest",
+      "olimorris/neotest-rspec",
+    },
 		run = ":UpdateRemotePlugins",
 	})
 
