@@ -3,7 +3,7 @@
 vim.g.tokyonight_style = "storm"
 vim.cmd([[
 try
-  colorscheme tokyonight
+  colorscheme ayu
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

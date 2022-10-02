@@ -6,6 +6,7 @@ end
 local actions = require("telescope.actions")
 telescope.load_extension("lazygit")
 telescope.load_extension("emoji")
+telescope.load_extension("fzf")
 
 telescope.setup({
 	defaults = {
@@ -89,10 +90,17 @@ telescope.setup({
 		-- builtin picker
 	},
 	extensions = {
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- please take a look at the readme of the extension you want to configure
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+		emoji = {
+			action = function(emoji)
+				vim.fn.setreg("+", emoji.value)
+				print([[Press p or "+p to paste this emoji ]] .. emoji.value)
+			end,
+		},
 	},
 })

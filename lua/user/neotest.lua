@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 neotest.setup({
-    adapters = {
-      require('neotest-jest'),
-      require('neotest-rspec'),
-    }
-  })
+	adapters = {
+		require("neotest-jest")({ jestCommand = "npm run test --" }),
+		require("neotest-rspec"),
+	},
+})

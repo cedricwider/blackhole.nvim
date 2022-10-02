@@ -61,12 +61,23 @@ local leader_mappings = {
 
 	j = {
 		name = "Jump",
-		w = { "<cmd>HopWordAC<cr>", "Word" },
+    ["1"] = {"<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Go to Mark 1"},
+    ["2"] = {"<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Go to Mark 2"},
+    ["3"] = {"<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Go to Mark 3"},
+    ["4"] = {"<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Go to Mark 4"},
+    ["5"] = {"<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Go to Mark 5"},
+    ["6"] = {"<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Go to Mark 6"},
+    ["7"] = {"<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Go to Mark 7"},
+    ["8"] = {"<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Go to Mark 8"},
+    ["9"] = {"<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Go to Mark 9"},
 		b = { "<cmd>HopWordBC<cr>", "Before Cursor" },
 		j = { "<cmd>HopLineAC<cr>", "Line downwards" },
+		l = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "List marks" },
+		m = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark file" },
 		k = { "<cmd>HopLineBC<cr>", "Line upwards" },
 		o = { "<cmd>Telescope treesitter theme=ivy<cr>", "Symbols" },
 		s = { "<cmd>HopChar2<cr>", "Sequence (2 Chars)" },
+		w = { "<cmd>HopWordAC<cr>", "Word" },
 	},
 
 	l = {

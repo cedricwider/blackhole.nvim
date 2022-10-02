@@ -63,13 +63,13 @@ return packer.startup(function(use)
 	use("ggandor/lightspeed.nvim")
 	use("rgroli/other.nvim")
 	use("yamatsum/nvim-cursorline")
-	use("xiyaowong/telescope-emoji.nvim")
-	use("folke/tokyonight.nvim")
+	use("dm1try/golden_size")
+
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
 	use("ayu-theme/ayu-vim")
-  use("folke/tokyonight.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -91,7 +91,16 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
+	use("xiyaowong/telescope-emoji.nvim")
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
+	use("ThePrimeagen/harpoon")
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 
 	-- Treesitter
 	use({
@@ -119,19 +128,16 @@ return packer.startup(function(use)
 	use("kevinhwang91/rnvimr")
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
-	use({
-		"nvim-neorg/neorg",
-		requires = "nvim-lua/plenary.nvim",
-	})
+	use("michaeljsmith/vim-indent-object")
 
 	-- Testing
 	use({
 		"nvim-neotest/neotest",
 		requires = {
-      "nvim-lua/plenary.nvim",
-      "haydenmeade/neotest-jest",
-      "olimorris/neotest-rspec",
-    },
+			"nvim-lua/plenary.nvim",
+			"haydenmeade/neotest-jest",
+			"olimorris/neotest-rspec",
+		},
 		run = ":UpdateRemotePlugins",
 	})
 
