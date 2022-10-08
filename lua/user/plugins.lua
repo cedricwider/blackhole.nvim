@@ -85,10 +85,11 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	use("williamboman/mason.nvim") -- simple to use language server installer
+	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("jose-elias-alvarez/nvim-lsp-ts-utils")
+	use("mfussenegger/nvim-lint")
+	use("mhartington/formatter.nvim")
 
 	-- Telescope
 	use("xiyaowong/telescope-emoji.nvim")
@@ -129,6 +130,13 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
 	use("michaeljsmith/vim-indent-object")
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup()
+		end,
+	})
 
 	-- Testing
 	use({
@@ -152,8 +160,25 @@ return packer.startup(function(use)
 	})
 
 	-- Debugging
-	use("mfussenegger/nvim-dap")
-	use("suketa/nvim-dap-ruby")
+	use({
+		"mfussenegger/nvim-dap",
+		opt = true,
+		event = "BufReadPre",
+		module = { "dap" },
+		wants = { "nvim-dap-virtual-text", "nvim-dap-ui" },
+		requires = {
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
+			"nvim-telescope/telescope-dap.nvim",
+			{ "jbyuki/one-small-step-for-vimkind", module = "osv" },
+		},
+		config = function()
+			require("user.dap").setup()
+		end,
+	})
+	use({ "microsoft/vscode-js-debug", opt = true, run = "npm install --legacy-peer-deps && npm run compile" })
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	-- use("suketa/nvim-dap-ruby")
 
 	--Local plugins
 	use("~/Developer/lua/whid")

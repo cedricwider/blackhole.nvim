@@ -5,7 +5,13 @@ end
 
 neotest.setup({
 	adapters = {
-		require("neotest-jest")({ jestCommand = "npm run test --" }),
+		require("neotest-jest")({
+			jestCommand = "npm run test --",
+			env = { CI = true },
+			cwd = function(_)
+				return vim.fn.getcwd()
+			end,
+		}),
 		require("neotest-rspec"),
 	},
 })
