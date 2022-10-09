@@ -130,6 +130,7 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
 	use("michaeljsmith/vim-indent-object")
+	use("kosayoda/nvim-lightbulb")
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
