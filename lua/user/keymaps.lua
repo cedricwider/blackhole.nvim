@@ -30,6 +30,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-l>", ":bprevious<CR>", opts)
 keymap("n", "<C-h>", ":bnext<CR>", opts)
 
+-- Help
+keymap("n", "<F1>", ":Telescope help_tags<cr>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
