@@ -33,7 +33,6 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 2, -- is one of my fav
 	sidescrolloff = 2,
-	guifont = "Inconsolata Nerd Font:h13", -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append("c")
@@ -49,3 +48,9 @@ vim.cmd([[
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr() 
 ]])
+
+if vim.g.neovide then
+	vim.api.nvim_set_option_value("guifont", "Inconsolata Nerd Font:h14", { scope = "global" })
+	vim.api.nvim_set_var("neovide_transparency", 0.9)
+	vim.api.nvim_set_var("neovide_cursor_antialising", true)
+end
