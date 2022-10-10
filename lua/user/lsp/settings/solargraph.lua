@@ -5,7 +5,7 @@ return {
 	settings = {
 		solargraph = {
 			completion = true,
-			diagnostis = true,
+			diagnostis = false,
 		},
 	},
 }
