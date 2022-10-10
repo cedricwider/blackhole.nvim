@@ -92,3 +92,9 @@ keymap("o", 'in"', ':<c-u>normal! f"vi"<cr>', opts)
 keymap("o", 'il"', ':<c-u>normal! F"vi"<cr>', opts)
 keymap("o", 'an"', ':<c-u>normal! f"va"<cr>', opts)
 keymap("o", 'al"', ':<c-u>normal! F"va"<cr>', opts)
+
+-- Vim-style keymap definitions (they don't translate well into neovim syntax)
+vim.cmd([[
+  imap <silent><script><expr> <C-F> copilot#Accept("\<CR>")
+  let g:copilot_no_tab_map = v:true
+]])

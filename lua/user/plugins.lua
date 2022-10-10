@@ -129,15 +129,13 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
 	use("michaeljsmith/vim-indent-object")
+	use("github/copilot.vim")
 	-- use("kosayoda/nvim-lightbulb")
 	use({
 		"xiyaowong/nvim-transparent",
 		opt = true,
 		cond = function()
 			return not vim.g.neovide
-		end,
-		config = function()
-			require("transparent").setup()
 		end,
 	})
 	use({
