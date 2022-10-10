@@ -223,10 +223,8 @@ local space_mappings = {
 		},
 	},
 	t = {
-		name = "Test",
-		n = { "<cmd>TestNearest<cr>", "Test nearest" },
-		f = { "<cmd>TestFile<cr>", "Test file" },
-		s = { "<cmd>TestSuite<cr>", "Test Suite" },
+		name = "Toggle",
+		t = { "<cmd>TransparentToggle<cr>", "Transparent" },
 	},
 }
 

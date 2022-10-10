@@ -56,7 +56,6 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 	use("kdheepak/lazygit.nvim")
 	use("tpope/vim-fugitive")
@@ -130,8 +129,17 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("rcarriga/nvim-notify")
 	use("michaeljsmith/vim-indent-object")
-	use("kosayoda/nvim-lightbulb")
-	use("xiyaowong/nvim-transparent")
+	-- use("kosayoda/nvim-lightbulb")
+	use({
+		"xiyaowong/nvim-transparent",
+		opt = true,
+		cond = function()
+			return not vim.g.neovide
+		end,
+		config = function()
+			require("transparent").setup()
+		end,
+	})
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
