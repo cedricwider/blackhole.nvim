@@ -5,6 +5,7 @@ end
 
 bufferline.setup({
 	options = {
+		mode = "tabs",
 		numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -36,26 +37,14 @@ bufferline.setup({
 		tab_size = 21,
 		diagnostics = "nvim_lsp", -- none | "nvim_lsp" | "coc",
 		diagnostics_update_in_insert = false,
-		-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-		--   return "("..count..")"
-		-- end,
 		-- NOTE: this will be called a lot so don't do any heavy processing here
 		custom_filter = function(buf_number)
 			-- filter out filetypes you don't want to see
 			if vim.bo[buf_number].filetype ~= "help" then
-			  return true
+				return true
 			end
 
-      return vim.bo[buf_number].buflisted
-			--   -- filter out by buffer name
-			--   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-			--     return true
-			--   end
-			--   -- filter out based on arbitrary rules
-			--   -- e.g. filter out vim wiki buffer from tabline in your work repo
-			--   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-			--     return true
-			--   end
+			return vim.bo[buf_number].buflisted
 		end,
 		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 		show_buffer_icons = true,
@@ -63,25 +52,9 @@ bufferline.setup({
 		show_close_icon = true,
 		show_tab_indicators = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-		-- can also be a table containing 2 custom separators
-		-- [focused and unfocused]. eg: { '|', '|' }
 		separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
 		sort_by = "tabs",
-		-- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
-		--   -- add custom logic
-		--   return buffer_a.modified > buffer_b.modified
-		-- end
 	},
 })
--- Using `gui`, `guifg`, `guibg`, `guisp` is deprecated please, convert these as follows:
---[[ - guifg -> fg ]]
---[[ - guibg -> bg ]]
---[[ - guisp -> sp ]]
---[[ - gui -> underline = true, undercurl = true, italic = true ]]
---[[  see :help bufferline-highlights for more details on how to update your highlights ]]
---[[ Please fix: ]]
---[[ - duplicate_selected ]]
---[[ - duplicate_visible ]]
---[[]]
