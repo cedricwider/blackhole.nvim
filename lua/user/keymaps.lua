@@ -27,8 +27,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-l>", ":bprevious<CR>", opts)
-keymap("n", "<C-h>", ":bnext<CR>", opts)
+keymap("n", "<C-l>", ":bnext<CR>", opts)
+keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
 -- Help
 keymap("n", "<F1>", ":Telescope help_tags<cr>", opts)

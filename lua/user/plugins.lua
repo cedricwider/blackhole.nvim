@@ -130,6 +130,7 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-notify")
 	use("michaeljsmith/vim-indent-object")
 	use("github/copilot.vim")
+	use("jeetsukumaran/vim-indentwise")
 	-- use("kosayoda/nvim-lightbulb")
 	use({
 		"xiyaowong/nvim-transparent",
