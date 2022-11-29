@@ -14,7 +14,9 @@ formatter.setup({
 			require("formatter.filetypes.ruby").rubocop,
 		},
 		typescript = {
-			require("formatter.filetypes.typescript").prettierd,
+			require("formatter.filetypes.typescript").eslint_d,
+		},
+		vue = {
 			require("formatter.filetypes.typescript").eslint_d,
 		},
 	},

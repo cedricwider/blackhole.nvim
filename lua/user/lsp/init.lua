@@ -5,7 +5,7 @@ end
 
 require("user.lsp.diagnostics").setup()
 
-require("user.lsp.settings.volar-setup")
+-- require("user.lsp.settings.volar-setup")
 -- require("user.lsp.handlers").setup()
 
 -- Use an on_attach function to only map the following keys
@@ -39,6 +39,10 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 lspconfig["tsserver"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
+lspconfig["volar"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
