@@ -50,7 +50,6 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -59,7 +58,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("kdheepak/lazygit.nvim")
 	use("tpope/vim-fugitive")
-	use("ggandor/lightspeed.nvim")
+	use("ggandor/leap.nvim")
 	use("rgroli/other.nvim")
 	use("yamatsum/nvim-cursorline")
 	use("dm1try/golden_size")
@@ -77,6 +76,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lsp-document-symbol")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -131,6 +132,17 @@ return packer.startup(function(use)
 	use("michaeljsmith/vim-indent-object")
 	use("github/copilot.vim")
 	use("jeetsukumaran/vim-indentwise")
+	use({
+		"utilyre/barbecue.nvim",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"smiteshp/nvim-navic",
+			"kyazdani42/nvim-web-devicons", -- optional
+		},
+		config = function()
+			require("barbecue").setup()
+		end,
+	})
 	-- use("kosayoda/nvim-lightbulb")
 	use({
 		"xiyaowong/nvim-transparent",
