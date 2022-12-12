@@ -1,3 +1,4 @@
+local global_settings = require("user.lsp.settings.globals")
 local default_schemas = {}
 local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
 if status_ok then
@@ -178,6 +179,8 @@ end
 local extended_schemas = extend(schemas, default_schemas)
 
 local opts = {
+	flags = global_settings.lsp_flags,
+	on_attach = global_settings.on_attach,
 	settings = {
 		json = {
 			schemas = extended_schemas,
