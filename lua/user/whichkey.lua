@@ -175,6 +175,7 @@ local leader_mappings = {
 		["-"] = { "<cmd>split<cr>", "Split horizontal" },
 		["/"] = { "<cmd>vsplit<cr>", "Split vertical" },
 		d = { "<cmd>quit<cr>", "Close" },
+		o = { "<cmd>%bd|e#|bd#<cr>", "Close Others" },
 		m = { "<cmd>only<cr>", "Maximize" },
 	},
 
@@ -225,6 +226,7 @@ local space_mappings = {
 	t = {
 		name = "Toggle",
 		t = { "<cmd>TransparentToggle<cr>", "Transparent" },
+		g = { "<cmd>lua require'user.functions.golden_size'.toggle()<cr>", "Golden Size" },
 	},
 }
 
