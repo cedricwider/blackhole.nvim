@@ -16,6 +16,9 @@ formatter.setup({
 		typescript = {
 			require("formatter.filetypes.typescript").eslint_d,
 		},
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
 		vue = {
 			require("formatter.filetypes.typescript").eslint_d,
 		},

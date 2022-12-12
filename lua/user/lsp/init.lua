@@ -6,6 +6,7 @@ require("user.lsp.diagnostics").setup()
 
 local lsp_servers = {
 	"jsonls",
+	"rust_analyzer",
 	"solargraph",
 	"sumneko_lua",
 	"tsserver",

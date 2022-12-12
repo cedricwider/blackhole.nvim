@@ -90,6 +90,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("mfussenegger/nvim-lint")
 	use("mhartington/formatter.nvim")
+	use("simrat39/rust-tools.nvim")
 
 	-- Telescope
 	use("xiyaowong/telescope-emoji.nvim")
