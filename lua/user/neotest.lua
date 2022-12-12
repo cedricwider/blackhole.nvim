@@ -8,7 +8,7 @@ neotest.setup({
 		require("neotest-jest")({
 			-- jest options
 			jestCommand = "./node_modules/.bin/jest",
-			jestConfigFile = "jest-server.config.js",
+			jestConfigFile = "jest.config.js",
 			env = { CI = true },
 			cwd = function(_)
 				return vim.fn.getcwd()
