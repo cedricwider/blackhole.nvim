@@ -144,7 +144,10 @@ return packer.startup(function(use)
 			require("barbecue").setup()
 		end,
 	})
-	-- use("kosayoda/nvim-lightbulb")
+	use({
+		"sindrets/diffview.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
 	use({
 		"xiyaowong/nvim-transparent",
 		opt = true,
