@@ -2,7 +2,7 @@ local options = {
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 	cmdheight = 1, -- more space in the neovim command line for displaying messages
-	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+	completeopt = { "menuone", "noinsert", "noselect" }, -- mostly just for cmp
 	conceallevel = 0, -- so that `` is visible in markdown files
 	fileencoding = "utf-8", -- the encoding written to a file
 	foldenable = false, -- make sure folds are open when opening a file
@@ -45,8 +45,8 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 vim.cmd([[
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr() 
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr() 
 ]])
 
 if vim.g.neovide then
