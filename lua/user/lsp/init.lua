@@ -8,9 +8,10 @@ local lsp_servers = {
 	"jsonls",
 	"rust_analyzer",
 	"solargraph",
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"volar",
+	"yamlls",
 }
 
 for _, language_server in ipairs(lsp_servers) do

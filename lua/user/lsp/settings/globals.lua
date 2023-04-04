@@ -1,14 +1,21 @@
+local navic_loaded, navic = pcall(require, "nvim-navic")
+
 local M = {
 	lsp_flags = {
 		debounce_text_changes = 150,
 	},
 
-	on_attach = function(_, bufnr)
+	on_attach = function(client, bufnr)
+		if navic_loaded and client.server_capabilities.documentSymbolProvider then
+			navic.attach(client, bufnr)
+		end
+
 		-- Enable completion triggered by <c-x><c-o>
 		vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 		-- Mappings.
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)

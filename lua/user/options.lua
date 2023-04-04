@@ -50,7 +50,7 @@ vim.cmd([[
 ]])
 
 if vim.g.neovide then
-	vim.api.nvim_set_option_value("guifont", "Inconsolata Nerd Font:h14", { scope = "global" })
-	vim.api.nvim_set_var("neovide_transparency", 0.9)
+	vim.api.nvim_set_option_value("guifont", "Consolas ligaturized v2:h13", { scope = "global" })
+	vim.api.nvim_set_var("neovide_transparency", 0.95)
 	vim.api.nvim_set_var("neovide_cursor_antialising", true)
 end

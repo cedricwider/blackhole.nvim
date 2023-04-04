@@ -46,3 +46,15 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		require("lint").try_lint()
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function(data)
+		local real_file = vim.fn.filereadable(data.file) == 1
+		local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+		if real_file or no_name then
+			return
+		end
+
+		require("nvim-tree.api").tree.toggle({ focus = false, find_file = false })
+	end,
+})

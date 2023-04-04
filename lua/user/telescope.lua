@@ -7,6 +7,8 @@ local actions = require("telescope.actions")
 telescope.load_extension("lazygit")
 telescope.load_extension("emoji")
 telescope.load_extension("fzf")
+-- telescope.load_extension("dap")
+-- telescope.load_extension("i23")
 
 telescope.setup({
 	defaults = {

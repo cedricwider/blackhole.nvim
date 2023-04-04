@@ -13,8 +13,7 @@ local leader_mappings = {
 			"list-buffers",
 		},
 		d = { "<cmd>Bdelete!<cr>", "Kill buffer" },
-		-- o = { "<cmd>%bd|e#|bd#<cr>", "Close other buffers" },
-		o = { "<cmd>BufferLineCloseLeft | BufferLineCloseRight<cr>", "Close other buffers" },
+		o = { "<cmd>%bd|e#|bd#<cr>", "Close other buffers" },
 		n = { "<cmd>bnext<cr>", "Next buffer" },
 		p = { "<cmd>bprevious<cr>", "Previous buffer" },
 	},
@@ -175,7 +174,6 @@ local leader_mappings = {
 		["-"] = { "<cmd>split<cr>", "Split horizontal" },
 		["/"] = { "<cmd>vsplit<cr>", "Split vertical" },
 		d = { "<cmd>quit<cr>", "Close" },
-		o = { "<cmd>%bd|e#|bd#<cr>", "Close Others" },
 		m = { "<cmd>only<cr>", "Maximize" },
 	},
 
