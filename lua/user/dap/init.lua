@@ -16,7 +16,7 @@ local function configure()
 			numhl = "",
 		},
 		stopped = {
-			text = "➡️",
+			text = "👉",
 			texthl = "LspDiagnosticsSignInformation",
 			linehl = "DiagnosticUnderlineInfo",
 			numhl = "LspDiagnosticsSignInformation",
@@ -35,12 +35,6 @@ local function configure_extensions()
 	dap.listeners.after.event_initialized["dapui_config"] = function()
 		dapui.open()
 	end
-	--[[ dap.listeners.before.event_terminated["dapui_config"] = function() ]]
-	--[[ 	dapui.close() ]]
-	--[[ end ]]
-	--[[ dap.listeners.before.event_exited["dapui_config"] = function() ]]
-	--[[ 	dapui.close() ]]
-	--[[ end ]]
 end
 
 local function configure_adapters()
@@ -50,11 +44,27 @@ local function configure_adapters()
 	require("user.dap.vscode-js-debug")
 end
 
+local function configure_keys()
+	vim.keymap.set("n", "F5", function()
+		require("dap").continue()
+	end)
+	vim.keymap.set("n", "F7", function()
+		require("dap").step_out()
+	end)
+	vim.keymap.set("n", "F8", function()
+		require("dap").step_over()
+	end)
+	vim.keymap.set("n", "F9", function()
+		require("dap").step_into()
+	end)
+end
+
 function M.setup()
 	configure()
 	configure_extensions()
 	configure_adapters()
-	dap.setup()
+	configure_keys()
+	require("telescope").load_extension("dap")
 end
 
 -- configure_adapters()

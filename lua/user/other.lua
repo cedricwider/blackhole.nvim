@@ -21,5 +21,9 @@ other.setup({
 			pattern = "server/test/(.*)/(.*).spec.ts$",
 			target = "server/src/%1/%2.ts",
 		},
+		{
+			pattern = "client/(.*)/(.*).ts$",
+			target = "client/test/%1/%2.spec.ts",
+		},
 	},
 })
