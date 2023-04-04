@@ -1,3 +1,4 @@
+local dap = require("dap")
 local M = {}
 
 local function configure()
@@ -28,24 +29,24 @@ local function configure()
 end
 
 local function configure_extensions()
-	require("nvim-dap-virtual-text").setup()
-	local dap = require("dap")
 	local dapui = require("dapui")
 	dapui.setup()
+	require("nvim-dap-virtual-text").setup()
 	dap.listeners.after.event_initialized["dapui_config"] = function()
 		dapui.open()
 	end
-	dap.listeners.before.event_terminated["dapui_config"] = function()
-		dapui.close()
-	end
-	dap.listeners.before.event_exited["dapui_config"] = function()
-		dapui.close()
-	end
+	--[[ dap.listeners.before.event_terminated["dapui_config"] = function() ]]
+	--[[ 	dapui.close() ]]
+	--[[ end ]]
+	--[[ dap.listeners.before.event_exited["dapui_config"] = function() ]]
+	--[[ 	dapui.close() ]]
+	--[[ end ]]
 end
 
 local function configure_adapters()
-	-- require("user.dap.ruby")
-	-- require("user.dap.javascript_chrome")
+	require("user.dap.ruby")
+	require("user.dap.node2")
+	require("user.dap.javascript_chrome")
 	require("user.dap.vscode-js-debug")
 end
 
@@ -53,8 +54,9 @@ function M.setup()
 	configure()
 	configure_extensions()
 	configure_adapters()
+	dap.setup()
 end
 
-configure_adapters()
+-- configure_adapters()
 
 return M

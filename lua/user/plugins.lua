@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use("rgroli/other.nvim")
 	use("yamatsum/nvim-cursorline")
 	use("dm1try/golden_size")
+	use({ "m00qek/baleia.nvim", tag = "v1.2.0" })
 
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -99,9 +100,10 @@ return packer.startup(function(use)
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	})
 	use("ThePrimeagen/harpoon")
+  use({ "HUAHUAI23/telescope-dapzzzz" })
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
+		requires = { "nvim-lua/plenary.nvim"},
 	})
 
 	-- Treesitter
